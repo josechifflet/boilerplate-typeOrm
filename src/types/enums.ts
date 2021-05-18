@@ -1,0 +1,12 @@
+export enum Role {
+  User,
+  Admin,
+}
+
+export enum ErrorCode {
+  GENERIC='GENERIC',
+  INVALID_DATA='INVALID_DATA',
+  INVALID_PARAM='INVALID_PARAM',
+  NOT_FOUND='NOT_FOUND',
+  UNAUTHORIZED='UNAUTHORIZED'
+}
