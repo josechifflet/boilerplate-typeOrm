@@ -8,6 +8,7 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "strict": true,
+    "strictPropertyInitialization": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
