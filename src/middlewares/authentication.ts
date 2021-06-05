@@ -10,11 +10,10 @@ export const authMiddleware = errorHandlerAsync(
     const token = req.headers.authorization as string;
 
     const decodedPayload = validateToken(token);
-    if (!decodedPayload)
-      throw new UnauthorizedError('Invalid token');
+    if (!decodedPayload) throw new UnauthorizedError('Invalid token');
 
     const { userId, auth_time } = decodedPayload;
-    const user = await userRepository().findOne({ where: { id:userId } });
+    const user = await userRepository().findOne({ where: { id: userId } });
     if (!user) throw new UnauthorizedError('Invalid token');
 
     if (auth_time !== user.authTime.getMilliseconds()) throw new UnauthorizedError('Token expired');

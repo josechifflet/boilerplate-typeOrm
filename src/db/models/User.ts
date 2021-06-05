@@ -1,10 +1,19 @@
-import { BaseEntity, Column, CreateDateColumn, DeleteDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { Post } from './Post';
 
 enum Gender {
   Male = 'MALE',
   Female = 'FEMALE',
-  Other = "OTHER"
+  Other = 'OTHER',
 }
 
 @Entity()
@@ -28,16 +37,16 @@ export class User extends BaseEntity {
   public birthday: Date;
 
   @Column({
-    type: "enum",
+    type: 'enum',
     enum: Gender,
-    default: Gender.Other
+    default: Gender.Other,
   })
   public gender: Gender;
 
   @Column()
   public phone: string;
 
-  @OneToMany(() => Post, post => post.user)
+  @OneToMany(() => Post, (post) => post.user)
   public posts: Post[];
 
   @Column()
