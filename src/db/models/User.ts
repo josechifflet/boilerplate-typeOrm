@@ -9,7 +9,7 @@ enum Gender {
 
 @Entity()
 export class User extends BaseEntity {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   public id!: string;
 
   @Column()
@@ -38,7 +38,10 @@ export class User extends BaseEntity {
   public phone: string;
 
   @OneToMany(() => Post, post => post.user)
-  posts: Post[];
+  public posts: Post[];
+
+  @Column()
+  public authTime: Date;
 
   @CreateDateColumn()
   public createdAt: Date;

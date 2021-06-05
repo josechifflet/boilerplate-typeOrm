@@ -1,6 +1,6 @@
-FROM node:10.16.0
+FROM node:14.17.1
 
-ENV NODE_ENV=test
+ENV NODE_ENV=development
 
 WORKDIR /app
 

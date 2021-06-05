@@ -1,1 +1,0 @@
-export const JWT_EXPIRATION = 10000

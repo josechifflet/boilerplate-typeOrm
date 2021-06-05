@@ -1,8 +1,8 @@
 import { ErrorCode } from '../types/enums';
 import { BaseError } from './BaseError';
 
-export class UnauthorizedError extends BaseError {
+export class BadRequestError extends BaseError {
   constructor(message: any, errorPlace?: string) {
-    super(ErrorCode.UNAUTHORIZED, message, 401, errorPlace);
+    super(ErrorCode.BAD_REQUEST, message, 400, errorPlace);
   }
 }

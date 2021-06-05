@@ -1,4 +1,4 @@
-import { ErrorCode } from 'types';
+import { ErrorCode } from '../types/enums';
 import { BaseError } from './BaseError';
 
 export class NotFoundError extends BaseError {
